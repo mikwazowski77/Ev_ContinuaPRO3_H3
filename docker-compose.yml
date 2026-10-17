@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql_miguel:
+    image: mysql:8.0
+    container_name: db_container_miguel
+    environment:
+      MYSQL_DATABASE: db_minimarket_pro413
+      MYSQL_ROOT_PASSWORD: rootpass999
+      MYSQL_USER: user_miguel
+      MYSQL_PASSWORD: passmiguel123
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_data_miguel:/var/lib/mysql
+    restart: always
+
+volumes:
+  mysql_data_miguel:
